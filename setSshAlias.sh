@@ -1,11 +1,9 @@
 #!/bin/bash
 #setSshAlias. After copying make it executable with chmod +x setSshAlias.sh
  
-#you can change this values
-MYPASS="dumypass"
-PWDFILE="/home/myusername/p.txt"
- 
-ALIASCOUNT=$(grep "alias ssh='ssh -B --password=file://$PWDFILE'" .bashrc -c)
+source ./setVars.conf
+
+ALIASCOUNT=$(grep "alias ssh='ssh -B --password=file://" ~/.bashrc -c)
  
 #if Password file does not exist, create it
 if [ -f "$PWDFILE" ]
